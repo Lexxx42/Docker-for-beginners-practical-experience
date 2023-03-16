@@ -68,4 +68,4 @@ sudo docker run docker/whalesay cowsay Hi, Alex!
 
 А тем временем кит сказал "Hi, Alex!", замечательно! У нас все получилось (:
 
-<img src="img/hi_alex.png" width="200" height="300" alt="whalesay say hello">
+<img src="img/hi_alex.png" width="300" height="200" alt="whalesay say hello">
