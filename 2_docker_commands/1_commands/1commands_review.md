@@ -30,7 +30,7 @@ docker run nginx
 docker ps
 ```
 
-<img src="img/docker_ps.png" width="700" height="150" alt="docker ps">
+<img src="../img/docker_ps.png" width="700" height="150" alt="docker ps">
 
 Каждый контейнер получает случайным образом выбранный ID и случайное имя, если оно не было указано явно при создании.
 
@@ -40,7 +40,7 @@ docker ps
 docker ps -a
 ```
 
-<img src="img/docker_ps-a.png" width="700" height="150" alt="docker ps -a">
+<img src="../img/docker_ps-a.png" width="700" height="150" alt="docker ps -a">
 
 Как ты видишь, в системе 2 контейнера.
 Контейнер №1 работает, а №2 - нет.
@@ -53,18 +53,18 @@ docker ps -a
 docker stop
 ```
 
-<img src="img/docker_stop.png" width="200" height="80" alt="docker stop">
+<img src="../img/docker_stop.png" width="200" height="80" alt="docker stop">
 
 Если ты не уверен в имени или id лучше для начала вызови docker ps
 
-<img src="img/docker_ps2.png" width="700" height="80" alt="docker ps">
+<img src="../img/docker_ps2.png" width="700" height="80" alt="docker ps">
 
 Еще раз резюмируем:
 
 + docker ps - это запущенные контейнеры
 + docker ps -a - это все, которые есть на хосте (работающие и нет)
 
-<img src="img/docker_ps-a_stoped.png" width="700" height="80" alt="docker container stopped">
+<img src="../img/docker_ps-a_stoped.png" width="700" height="80" alt="docker container stopped">
 
 Контейнер gracious_morse был создан для разовой работы. Он свою задачу выполнил, завершился и будущем мне уже не
 понадобится. Теперь он просто занимает место на диске.
@@ -82,11 +82,11 @@ docker rm
 docker rm gracious_morse
 ```
 
-<img src="img/docker_rm.png" width="500" height="80" alt="docker rm">
+<img src="../img/docker_rm.png" width="500" height="80" alt="docker rm">
 
 Для проверки запустим docker ps и посмотримверно ли все удалилось.
 
-<img src="img/docker_ps_after_rm.png" width="700" height="100" alt="docker ps after rm">
+<img src="../img/docker_ps_after_rm.png" width="700" height="100" alt="docker ps after rm">
 
 Как видишь, его больше нет в нашей системе.
 
@@ -101,7 +101,7 @@ docker rm gracious_morse
 docker images
 ```
 
-<img src="img/docker_images.png" width="450" height="100" alt="docker images">
+<img src="../img/docker_images.png" width="450" height="100" alt="docker images">
 
 У нас представленно 5 образов локально: nginx, ubuntu, redis, weaveworks/scope, alpine.
 Чуть позже я расскажу про теги.
@@ -122,7 +122,7 @@ docker rmi
 docker rmi redis
 ```
 
-<img src="img/docker_rmi.png" width="600" height="170" alt="docker rmi">
+<img src="../img/docker_rmi.png" width="600" height="170" alt="docker rmi">
 
 7. Ранее я запустил команду docker run и она скачала образ redis, поскольку не нашла его локально на хосте. А что, если
    мы просто хотим скачать образ и сохранить? Например для того, чтобы потом быстро запустить redis не ожидая пока его
@@ -134,13 +134,13 @@ docker rmi redis
 docker pull redis
 ```
 
-<img src="img/docker_pull.png" width="600" height="170" alt="docker pull">
+<img src="../img/docker_pull.png" width="600" height="170" alt="docker pull">
 
 Которая просто скачает образ, но не будет его запускать.
 
 Как видишь, найдя локально image, docker run не идет за ним в репозиторий.
 
-<img src="img/docker_run_redis.png" width="600" height="170" alt="docker run redis">
+<img src="../img/docker_run_redis.png" width="600" height="170" alt="docker run redis">
 
 ## Особенности контейнеров
 
@@ -152,16 +152,16 @@ docker run ubuntu
 
 Это запустит экземпляр ubuntu и немедленно выйдет из него.
 
-<img src="img/docker_run_ubuntu.png" width="250" height="80" alt="docker run ubuntu">
+<img src="../img/docker_run_ubuntu.png" width="250" height="80" alt="docker run ubuntu">
 
 При просмотре работающих контейнеров мы не его не увидим
 
-<img src="img/docker_ps_after_run_ubuntu.png" width="700" height="70" alt="docker ps after run ubuntu">
+<img src="../img/docker_ps_after_run_ubuntu.png" width="700" height="70" alt="docker ps after run ubuntu">
 
 Но если посмотреть всписок всех контейнеров, находящихся на хосте, включая остановленные, обнаружатся контейнеры с
 состоянием exited
 
-<img src="img/docker_ps-a_ubuntu_exited.png" width="700" height="70" alt="docker ps after run ubuntu">
+<img src="../img/docker_ps-a_ubuntu_exited.png" width="700" height="70" alt="docker ps after run ubuntu">
 
 Это еще одно отличие от виртуальной машины, - контейнеры не предназначены для размещения операционных систем.
 
@@ -204,7 +204,7 @@ docker run ubuntu sleep 5
 
 Например, у меня выполняется контейнер с ubuntu. Когда я делаю docker ps -a, то вижу его статус Up.
 
-<img src="img/docker_ps-a_ubuntu_status_up.png" width="700" height="70" alt="docker ps -a ubuntu status up">
+<img src="../img/docker_ps-a_ubuntu_status_up.png" width="700" height="70" alt="docker ps -a ubuntu status up">
 
 Внутри него выполняется команда sleep 500. Я хочу увидеть содержимое файла внутри контейнера. Как мне это сделать?
 
@@ -214,7 +214,7 @@ docker run ubuntu sleep 5
 docker exec clever_morse cat /etc/hosts
 ```
 
-<img src="img/docker_exec.png" width="500" height="150" alt="docker exec">
+<img src="../img/docker_exec.png" width="500" height="150" alt="docker exec">
 
 В данном случае, я вывел содержимое файла /etc/hosts, - это файла контейнера, а не ОС докер хоста.
 
@@ -235,7 +235,7 @@ cat /etc/hosts
 Его собранный образ лежит на докерхаб в rotorocloud/webapp - это приложение запускает небольшой веб-сервер, который
 доступен на порту 5000.
 
-<img src="img/rotorocloud-webapp.png" width="600" height="150" alt="rotorocloud web app">
+<img src="../img/rotorocloud-webapp.png" width="600" height="150" alt="rotorocloud web app">
 
 После запуска команды
 
@@ -259,7 +259,7 @@ docker run rotorocloud/webapp
 docker run -d rotorocloud/webapp
 ```
 
-<img src="img/rotorocloud-webapp_detached_mode.png" width="300" height="50" alt="rotorocloud web app detached mode">
+<img src="../img/rotorocloud-webapp_detached_mode.png" width="300" height="50" alt="rotorocloud web app detached mode">
 
 Пишется как деш-ди. Это запустит контейнер в фоновом режиме и ты сразу же сможешь взаимодействовать со своей оболочкой.
 
@@ -268,7 +268,7 @@ docker run -d rotorocloud/webapp
 В любой момент ты можешь прикрепить контейнер к консоли запустив команду docker attach с указанием id или имени
 контейнера
 
-<img src="img/docker_attach.png" width="700" height="120" alt="docker attach">
+<img src="../img/docker_attach.png" width="700" height="120" alt="docker attach">
 
 Обрати внимание, что при использовании id, не обязательно писать длинную строку id. Достаточно указать первые несколько
 символов. Однако, если на хосте в данный момент есть дублирование первых символов каких-то id, то тебе придется указать
