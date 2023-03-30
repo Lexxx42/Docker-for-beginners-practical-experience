@@ -35,5 +35,5 @@ docker push alex42konukhov/yandex-weather-bot:debian-bullseye
 Чтобы спуллить репозиторий:
 
 ```docker
-docker pull alex42konukhov/yandex-weather-bot
+docker pull alex42konukhov/yandex-weather-bot:debian-bullseye
 ```
