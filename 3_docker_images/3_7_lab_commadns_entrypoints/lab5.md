@@ -73,8 +73,3 @@ cat Dockerfile-ubuntu
 ```docker
 docker run -d ubuntu sleep 1000
 ```
-
-
-
-
-
