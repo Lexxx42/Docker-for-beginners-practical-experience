@@ -65,7 +65,7 @@
 NetworkSettings -> Networks мы можем увидеть тип сети, к которой контейнер привязан, его
 внутренний IP-адрес, Mac-адрес.
 
-<img src="img/inline_dns.png" width="600" height="400" alt="inline dns">
+<img src="img/embedded_dns.png" width="600" height="400" alt="embedded dns">
 
 Как ты помнишь в bridge network другие контейнеры могут связываться друг с другом, используя
 свои имена. Например, здесь у меня есть веб-сервер и контейнер базы данных MySQL, работающие
