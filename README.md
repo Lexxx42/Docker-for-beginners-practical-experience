@@ -2,4 +2,4 @@
 
 ## Course sourse
 
-[Docker fo beginners](https://stepik.org/course/123300/info)
+[Docker for beginners](https://stepik.org/course/123300/info)
